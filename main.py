@@ -5,10 +5,6 @@ from functools import partial
 from tkinter import messagebox
 from copy import deepcopy
 
-sign = 0
-
-global board
-board = [[" " for x in range(3)] for y in range(3)]
 
 def winner(b, l):
     return ((b[0][0] == l and b[0][1] == l and b[0][2] == l) or
@@ -133,6 +129,12 @@ def withpc(game_board):
 
 
 def play():
+    global sign
+    sign = 0
+
+    global board
+    board = [[" " for x in range(3)] for y in range(3)]
+
     menu = Tk()
     menu.geometry("250x250")
     menu.title("Tic Tac Toe")
